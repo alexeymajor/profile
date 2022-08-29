@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -28,10 +29,12 @@ public class ProfileField implements Serializable {
 
     @Id
     @Setter
+    @EqualsAndHashCode.Include
     @Column(name = "name", nullable = false)
     private String dataKey;
 
     @Id
+    @EqualsAndHashCode.Include
     @Column(name = "profile_name", nullable = false, insertable = false, updatable = false)
     private String profileName;
 

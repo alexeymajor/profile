@@ -16,9 +16,9 @@
     <properties>
         <java.version>11</java.version>
         <lombok.mapstruct.version>0.2.0</lombok.mapstruct.version>
-        <lombok.version>1.18.22</lombok.version>
-        <mapstruct.version>1.4.2.Final</mapstruct.version>
-        <com.vladmihalcea.hibernate-types-55>2.16.2</com.vladmihalcea.hibernate-types-55>
+        <lombok.version>1.18.24</lombok.version>
+        <mapstruct.version>1.5.2.Final</mapstruct.version>
+        <com.vladmihalcea.hibernate-types-55>2.18.0</com.vladmihalcea.hibernate-types-55>
     </properties>
     <dependencies>
         <dependency>
