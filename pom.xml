@@ -5,12 +5,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.8</version>
+        <version>2.6.12</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.avm</groupId>
     <artifactId>profile</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>profile</name>
     <description>profile</description>
     <properties>
@@ -18,7 +18,7 @@
         <lombok.mapstruct.version>0.2.0</lombok.mapstruct.version>
         <lombok.version>1.18.24</lombok.version>
         <mapstruct.version>1.5.2.Final</mapstruct.version>
-        <com.vladmihalcea.hibernate-types-55>2.18.0</com.vladmihalcea.hibernate-types-55>
+        <com.vladmihalcea.hibernate-types-55>2.19.2</com.vladmihalcea.hibernate-types-55>
     </properties>
     <dependencies>
         <dependency>
