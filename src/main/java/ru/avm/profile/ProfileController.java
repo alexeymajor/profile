@@ -25,6 +25,11 @@ public interface ProfileController {
                 .orElseThrow();
     }
 
+    @GetMapping("{name}/profile")
+    default ProfileDto detailsProfile(@PathVariable String name) {
+        return getProfileService().getProfile(getAlias() + "-" + name).orElseThrow();
+    }
+
     @PostMapping("profile")
     default void postProfile(@RequestBody ProfileDto profile) {
         getProfileService().updateProfileFull(getAlias(), profile);
