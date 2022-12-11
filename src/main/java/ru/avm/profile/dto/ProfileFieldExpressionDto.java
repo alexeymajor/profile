@@ -14,4 +14,5 @@ public class ProfileFieldExpressionDto {
     String nameKey;
     String formikId;
     boolean multiple;
+    boolean permissions;
 }
