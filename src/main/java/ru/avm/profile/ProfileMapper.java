@@ -13,7 +13,7 @@ public interface ProfileMapper {
 
     ProfileDto toDto(Profile domain);
 
-    @Mapping(target = "profileName")
+    @Mapping(target = "position", ignore = true)
     ProfileField toDomain(ProfileFieldDto dto, String profileName);
 
     @Mapping(target = "name", ignore = true)
@@ -23,6 +23,7 @@ public interface ProfileMapper {
     @Mapping(target = "name", ignore = true)
     void updateDomainFull(@MappingTarget Profile domain, ProfileDto profileDto);
 
+    @Mapping(target = "position", ignore = true)
     @Mapping(target = "dataKey", ignore = true)
     @Mapping(target = "profileName", ignore = true)
     void updateDomain(@MappingTarget ProfileField domain, ProfileFieldDto profileDto);

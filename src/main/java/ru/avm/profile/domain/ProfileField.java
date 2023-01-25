@@ -8,12 +8,9 @@ import org.hibernate.annotations.TypeDefs;
 import ru.avm.profile.dto.ProfileFieldExpressionDto;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -23,58 +20,42 @@ import java.io.Serializable;
         @TypeDef(name = "json", typeClass = JsonType.class),
 })
 
-@Entity
-@Table(name = "t_entity_profile_field")
+@Embeddable
 public class ProfileField implements Serializable {
-
-    @Id
-    @Setter
-    @EqualsAndHashCode.Include
+    @Column(name = "profile_name", insertable = false, updatable = false)
+    private String profileName;
+    @Column(name = "position", insertable = false, updatable = false)
+    private Integer position;
     @Column(name = "name", nullable = false)
     private String dataKey;
-
-    @Id
-    @EqualsAndHashCode.Include
-    @Column(name = "profile_name", nullable = false, insertable = false, updatable = false)
-    private String profileName;
-
     @Setter
     @Column(name = "type", nullable = false)
     private String type;
-
     @Setter
     @Column(name = "title")
     private String label;
-
-    @Setter
-    @Column(name = "position")
-    private Integer position;
-
     @Setter
     @Builder.Default
-    @Column(name = "can_edit", nullable = false, columnDefinition = "boolean default false")
+    @Column(name = "can_edit", columnDefinition = "boolean default false")
     private Boolean canEdit = false;
-
     @Setter
     @Column(name = "max_width")
     private Integer maxWidth;
-
     @Setter
     @Builder.Default
     @Column(name = "list_visible")
     private String visible = "xs";
-
+    @Setter
     @Column(name = "sort_order")
     private Integer sortOrder;
-
+    @Setter
     @Column(name = "sort_direction")
     private String sortDirection;
-
     @Setter
     @Builder.Default
-    @Column(name = "show_entity", nullable = false, columnDefinition = "boolean default true")
+    @Column(name = "show_entity", columnDefinition = "boolean default true")
     private Boolean showEntity = true;
-
+    @Setter
     @Type(type = "json")
     @Column(name = "expression", columnDefinition = "json")
     private ProfileFieldExpressionDto expression;

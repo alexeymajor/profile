@@ -1,9 +1,6 @@
 package ru.avm.profile.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -23,12 +20,16 @@ public class Profile implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Setter
     @Column(name = "title", nullable = false)
     private String title;
 
     @Builder.Default
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "profile_name", referencedColumnName = "name", nullable = false)
-    @OrderBy("position")
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(
+            name = "t_entity_profile_field",
+            joinColumns = {@JoinColumn(name = "profile_name")}
+    )
+    @OrderColumn(name = "position", columnDefinition = "int default 0")
     private final List<ProfileField> fields = new ArrayList<>();
 }
