@@ -12,5 +12,6 @@ import java.util.List;
 public class ProfileDto {
     String name;
     String title;
+    String width;
     List<ProfileFieldDto> fields;
 }

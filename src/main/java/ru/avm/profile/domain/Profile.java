@@ -15,15 +15,15 @@ import java.util.List;
 @Entity
 @Table(name = "t_entity_profile")
 public class Profile implements Serializable {
-
     @Id
     @Column(name = "name", nullable = false)
     private String name;
-
     @Setter
     @Column(name = "title", nullable = false)
     private String title;
-
+    @Setter
+    @Column(name = "width")
+    private String width;
     @Builder.Default
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
