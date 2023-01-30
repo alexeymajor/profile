@@ -12,7 +12,9 @@ public class ProfileFieldExpressionDto {
     String path;
     String idKey;
     String nameKey;
+    String noteKey;
+    String iconKey;
     String formikId;
-    boolean multiple;
-    boolean permissions;
+    Boolean multiple;
+    Boolean permissions;
 }
