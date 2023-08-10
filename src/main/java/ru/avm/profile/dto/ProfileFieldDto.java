@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Value;
 import lombok.extern.jackson.Jacksonized;
 
+import java.util.Map;
+
 @Value
 @AllArgsConstructor
 @Builder
@@ -19,7 +21,7 @@ public class ProfileFieldDto {
     String visible;
     @Builder.Default
     Boolean showEntity = false;
-    ProfileFieldExpressionDto expression;
+    Map<String, Object> expression;
     Integer sortOrder;
     String sortDirection;
 }

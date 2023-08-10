@@ -5,11 +5,11 @@ import lombok.*;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
-import ru.avm.profile.dto.ProfileFieldExpressionDto;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
+import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -58,5 +58,5 @@ public class ProfileField implements Serializable {
     @Setter
     @Type(type = "json")
     @Column(name = "expression", columnDefinition = "json")
-    private ProfileFieldExpressionDto expression;
+    private Map<String, Object> expression;
 }
