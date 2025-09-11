@@ -1,8 +1,8 @@
-package ru.avm.profile;
+package ru.avm.lib.profile;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import ru.avm.profile.dto.ProfileDto;
+import ru.avm.lib.profile.dto.ProfileDto;
 
 @RequestMapping("default")
 public interface ProfileController {

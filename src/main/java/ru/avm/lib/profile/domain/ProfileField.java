@@ -1,13 +1,11 @@
-package ru.avm.profile.domain;
+package ru.avm.lib.profile.domain;
 
-import com.vladmihalcea.hibernate.type.json.JsonType;
+import io.hypersistence.utils.hibernate.type.json.JsonType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.*;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Map;
 
@@ -15,11 +13,6 @@ import java.util.Map;
 @NoArgsConstructor
 @Builder
 @Getter
-
-@TypeDefs({
-        @TypeDef(name = "json", typeClass = JsonType.class),
-})
-
 @Embeddable
 public class ProfileField implements Serializable {
     @Column(name = "profile_name", insertable = false, updatable = false)
@@ -56,7 +49,7 @@ public class ProfileField implements Serializable {
     @Column(name = "show_entity", columnDefinition = "boolean default true")
     private Boolean showEntity = true;
     @Setter
-    @Type(type = "json")
+    @Type(JsonType.class)
     @Column(name = "expression", columnDefinition = "json")
     private Map<String, Object> expression;
 }

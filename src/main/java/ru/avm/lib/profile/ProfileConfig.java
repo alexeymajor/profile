@@ -1,10 +1,10 @@
-package ru.avm.profile;
+package ru.avm.lib.profile;
 
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.factory.Mappers;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.avm.profile.repository.ProfileRepository;
+import ru.avm.lib.profile.repository.ProfileRepository;
 
 @RequiredArgsConstructor
 

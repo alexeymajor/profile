@@ -1,11 +1,11 @@
-package ru.avm.profile;
+package ru.avm.lib.profile;
 
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.transaction.annotation.Transactional;
-import ru.avm.profile.domain.Profile;
-import ru.avm.profile.dto.ProfileDto;
-import ru.avm.profile.repository.ProfileRepository;
+import ru.avm.lib.profile.domain.Profile;
+import ru.avm.lib.profile.dto.ProfileDto;
+import ru.avm.lib.profile.repository.ProfileRepository;
 
 @RequiredArgsConstructor
 

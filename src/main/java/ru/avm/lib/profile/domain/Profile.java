@@ -1,8 +1,8 @@
-package ru.avm.profile.domain;
+package ru.avm.lib.profile.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

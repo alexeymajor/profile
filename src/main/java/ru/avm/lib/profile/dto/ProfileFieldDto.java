@@ -1,4 +1,4 @@
-package ru.avm.profile.dto;
+package ru.avm.lib.profile.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,12 +1,12 @@
-package ru.avm.profile;
+package ru.avm.lib.profile;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import ru.avm.profile.domain.Profile;
-import ru.avm.profile.domain.ProfileField;
-import ru.avm.profile.dto.ProfileDto;
-import ru.avm.profile.dto.ProfileFieldDto;
+import ru.avm.lib.profile.domain.Profile;
+import ru.avm.lib.profile.domain.ProfileField;
+import ru.avm.lib.profile.dto.ProfileDto;
+import ru.avm.lib.profile.dto.ProfileFieldDto;
 
 @Mapper
 public interface ProfileMapper {
@@ -15,6 +15,10 @@ public interface ProfileMapper {
 
     @Mapping(target = "position", ignore = true)
     ProfileField toDomain(ProfileFieldDto dto, String profileName);
+
+    @Mapping(target = "profileName", ignore = true)
+    @Mapping(target = "position", ignore = true)
+    ProfileField toDomain(ProfileFieldDto dto);
 
     @Mapping(target = "name", ignore = true)
     @Mapping(target = "fields", ignore = true)
