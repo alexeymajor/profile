@@ -9,6 +9,7 @@ import org.hibernate.annotations.Type;
 import java.io.Serializable;
 import java.util.Map;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
