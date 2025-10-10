@@ -7,7 +7,9 @@ import ru.avm.lib.profile.dto.ProfileDto;
 @RequestMapping("default")
 public interface ProfileController {
 
-    String getAlias();
+    default String getAlias() {
+        return getClass().getSimpleName();
+    }
 
     ProfileService getProfileService();
 
